@@ -32,4 +32,4 @@ jobs:
         tags: ${{ steps.build-image.outputs.tags }}
         registry: ghcr.io
         username: startergo
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        password: ${{ secrets.GITHUB_TOKEN }}
