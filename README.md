@@ -24,26 +24,26 @@ services:
  - docker
 
 script:
-  - docker run -v $TRAVIS_BUILD_DIR:/pkg whynothugo/makepkg
+  - docker run -v $TRAVIS_BUILD_DIR:/pkg startergo/makepkg
 ```
 
 Usage locally
 -------------
 
 ```
-docker run -v $PWD:/pkg whynothugo/makepkg
+docker run -v $PWD:/pkg startergo/makepkg
 ```
 
 Or export the built package file to the workding directory
 
 ```
-docker run -e EXPORT_PKG=1 -v $PWD:/pkg whynothugo/makepkg
+docker run -e EXPORT_PKG=1 -v $PWD:/pkg startergo/makepkg
 ```
 
 Or export the updated .SRCINFO for the package
 
 ```
-docker run -e EXPORT_SRC=1 -v $PWD:/pkg whynothugo/makepkg
+docker run -e EXPORT_SRC=1 -v $PWD:/pkg startergo/makepkg
 ```
 
 If you are running Arch, add `-v /etc/pacman.d/mirrorlist:/etc/pacman.d/mirrorlist:ro`
