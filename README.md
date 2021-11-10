@@ -10,6 +10,8 @@ used by packagers, both via CI, and on non-ArchLinux environments.
 The package can be saved to the current director by adding `-e EXPORT_PKG=1`,
 and the updated .SRCINFO file for the built package with `-e EXPORT_SRC=1`.
 
+Forked from [whynothugo/makepkg](https://github.com/whynothugo/docker-makepkg) to test building rEFInd in EDK2 environment
+
 Usage with travis
 -----------------
 
