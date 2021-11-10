@@ -25,7 +25,6 @@ jobs:
         containerfiles: |
           ./Dockerfile
      
-    - name: Push To Registry
     - uses: redhat-actions/push-to-registry@v2.4
       if: ${{ github.ref == 'refs/heads/main' }}
       with:
