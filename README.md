@@ -1,7 +1,7 @@
 docker-makepkg
 ==============
 
-[![build status](https://github.com/WhyNotHugo/docker-makepkg/actions/workflows/build.yaml/badge.svg)](https://github.com/WhyNotHugo/docker-makepkg/actions/workflows/build.yaml)
+[![build status](https://github.com/startergo/docker-makepkg/actions/workflows/build.yaml/badge.svg)](https://github.com/startergo/docker-makepkg/actions/workflows/build.yaml)
 
 This docker image is intended to tests `PKGBUILDs`, by installing dependencies
 and running `makepkg -f` in a clean Arch installation. It is intended to be
@@ -9,6 +9,8 @@ used by packagers, both via CI, and on non-ArchLinux environments.
 
 The package can be saved to the current director by adding `-e EXPORT_PKG=1`,
 and the updated .SRCINFO file for the built package with `-e EXPORT_SRC=1`.
+
+Forked from [whynothugo/makepkg](https://github.com/whynothugo/docker-makepkg) to test building rEFInd in EDK2 environment
 
 Usage with travis
 -----------------
