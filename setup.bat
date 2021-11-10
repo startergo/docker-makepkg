@@ -1,11 +1,11 @@
 
 @echo off
-docker build -t tiano_arch1 .
+docker build -t archlinux .
 docker run -dt^
-    --name arch_container1^
+    --name archlinux^
     --mount type=bind,source=%CD%,target=/src/mnt^
-    tiano_arch1
-docker stop arch_container1
-docker start arch_container1
+		archlinux
+docker stop archlinux
+docker start archlinux
 
-docker exec -it arch_container1 bash
+docker exec -it archlinux bash
