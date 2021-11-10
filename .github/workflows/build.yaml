@@ -24,8 +24,9 @@ jobs:
         tags: latest ${{ github.sha }}
         containerfiles: |
           ./Dockerfile
-
-    - uses: redhat-actions/push-to-registry@v2
+     
+    - name: Push To Registry
+    - uses: redhat-actions/push-to-registry@v2.4
       if: ${{ github.ref == 'refs/heads/main' }}
       with:
         image: ${{ steps.build-image.outputs.image }}
