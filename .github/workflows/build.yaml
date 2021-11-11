@@ -21,7 +21,7 @@ jobs:
       id: build-image
       with:
         image: startergo/makepkg
-        tags: latest ${{ github.sha }}
+        tags: latest
         containerfiles: |
           ./Dockerfile
      
