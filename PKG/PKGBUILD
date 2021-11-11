@@ -20,7 +20,7 @@ arch=('x86_64')
 license=('GPL3' 'custom')
 
 makedepends=('git')
-depends=('bash' 'dosfstools' 'efibootmgr' 'which' 'iasl')
+depends=('bash' 'dosfstools' 'efibootmgr' 'which' 'iasl' 'nano')
 optdepends=('sudo: privilege elevation'
             'gptfdisk: For finding ESP'
             'imagemagick: For refind-mkfont script'
@@ -56,7 +56,7 @@ else
 	_UDK_VERSION='UDK2018'
 	_TIANO_DIR_="edk2-${_UDK_VERSION}"
 
-	_TIANOCORE_PKG='MdeModule'
+	_TIANOCORE_PKG='Mde'
 	_TIANOCORE_TARGET='RELEASE'
 	_UDK_TARGET="${_TIANOCORE_PKG}Pkg/${_TIANOCORE_PKG}Pkg.dsc"
 	_COMPILER='GCC5'
@@ -145,7 +145,7 @@ _prepare_refind_sources() {
 		sed "s|^export EDK2BASE=.*$|export EDK2BASE=${_UDK_DIR}|g" -i "${srcdir}/${_pkgname}_build/Makefile" || true
 		
 		# Disable btrfs build
-		sed 's|RefindPkg/filesystems/btrfs.inf|#RefindPkg/filesystems/btrfs.inf|g' -i "${srcdir}/${_pkgname}_build/RefindPkg.dsc" || true
+		sed 's|RefindPkg/filesystems/btrfs.inf|#RefindPkg/filesystems/btrfs.inf|g' -i "${srcdir}/${_pkgname}_build/RefindPkg/RefindPkg.dsc" || true
 
 		# Disable build ID generation
 		sed 's|--gc-sections|--gc-sections --build-id=none|g' -i "${srcdir}/${_pkgname}_build/Make.common" || true
