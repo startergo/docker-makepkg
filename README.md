@@ -33,6 +33,12 @@ Usage locally
 ```
 docker run -v $PWD:/pkg startergo/makepkg
 ```
+On Windows
+-----------
+
+```
+docker run -v "$(PWD)":/pkg startergo/makepkg
+```
 
 Or export the built package file to the workding directory
 
