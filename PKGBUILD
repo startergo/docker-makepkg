@@ -99,7 +99,7 @@ _prepare_tianocore_sources() {
 	mkdir "${_UDK_DIR}/Build/"
 
 	# Disable build ID generation
-	sed 's|,--gc-sections|,--gc-sections,--build-id=none|g' -i "${EDK_TOOLS_PATH}/Conf/tools_def.template"
+	sed 's|,--gc-sections|,--gc-sections,--build-id=none|g' -i "${EDK_TOOLS_PATH}/Conf/tools_def.template"	
 
 	# Use python2 for UDK BaseTools
 	sed 's|python |python2 |g' -i "${EDK_TOOLS_PATH}/BinWrappers/PosixLike"/* || true
