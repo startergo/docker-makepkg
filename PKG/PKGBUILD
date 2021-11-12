@@ -145,7 +145,7 @@ _prepare_refind_sources() {
 		sed "s|^export EDK2BASE=.*$|export EDK2BASE=${_UDK_DIR}|g" -i "${srcdir}/${_pkgname}_build/Makefile" || true
 		
 		# Disable btrfs build
-		sed 's|RefindPkg/filesystems/btrfs.inf|#RefindPkg/filesystems/btrfs.inf|g' -i "${EDK2BASE}/RefindPkg/RefindPkg.dsc" || true
+		sed 's|RefindPkg/filesystems/btrfs.inf|#RefindPkg/filesystems/btrfs.inf|g' -i "${_UDK_DIR}/RefindPkg/RefindPkg.dsc" || true
 
 		# Disable build ID generation
 		sed 's|--gc-sections|--gc-sections --build-id=none|g' -i "${srcdir}/${_pkgname}_build/Make.common" || true
