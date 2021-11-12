@@ -27,29 +27,29 @@ script:
   - docker run -v $TRAVIS_BUILD_DIR:/pkg startergo/makepkg
 ```
 
-Usage locally
+Usage locally after cloning the repo and CD to the main repo
 -------------
 
 ```
-docker run -v $PWD:/pkg startergo/makepkg
+docker run --rm --mount type=bind,src=$pwd/pkg,target=/pkg ghcr.io/startergo/makepkg:latest
 ```
-On Windows
+On Windows in Powershell-Core
 -----------
 
 ```
-docker run -v "$(PWD)":/pkg startergo/makepkg
+docker run --rm --mount type=bind,src=$(pwd)/pkg,target=/pkg ghcr.io/startergo/makepkg:latest
 ```
 
 Or export the built package file to the workding directory
 
 ```
-docker run -e EXPORT_PKG=1 -v $PWD:/pkg startergo/makepkg
+docker run -e EXPORT_PKG=1 -v $PWD:/pkg ghcr.io/startergo/makepkg:latest
 ```
 
 Or export the updated .SRCINFO for the package
 
 ```
-docker run -e EXPORT_SRC=1 -v $PWD:/pkg startergo/makepkg
+docker run -e EXPORT_SRC=1 -v $PWD:/pkg ghcr.io/startergo/makepkg:latest
 ```
 
 If you are running Arch, add `-v /etc/pacman.d/mirrorlist:/etc/pacman.d/mirrorlist:ro`
