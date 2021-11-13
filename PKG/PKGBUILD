@@ -20,7 +20,7 @@ arch=('x86_64')
 license=('GPL3' 'custom')
 
 makedepends=('git')
-depends=('bash' 'dosfstools' 'efibootmgr' 'which' 'iasl' 'nano')
+depends=('bash' 'dosfstools' 'efibootmgr' 'which' 'iasl')
 optdepends=('sudo: privilege elevation'
             'gptfdisk: For finding ESP'
             'imagemagick: For refind-mkfont script'
