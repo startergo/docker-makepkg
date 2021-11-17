@@ -20,7 +20,7 @@ RUN mkdir .gnupg && \
     git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru-bin && \
     makepkg --noconfirm --syncdeps --rmdeps --install --clean && \
-    cp -r /usr/share /pkg
+    mkdir /pkg/refind && cp -r /usr/share /pkg/refind
 
 COPY run.sh /run.sh
 
