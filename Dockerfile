@@ -26,4 +26,4 @@ COPY run.sh /run.sh
 
 # Build the package
 WORKDIR /pkg
-CMD ["/bin/bash", "/run.sh", "ls && ... && /bin/bash"]
+CMD ["/bin/bash", "/run.sh"]
