@@ -19,7 +19,8 @@ RUN mkdir .gnupg && \
     # hadolint ignore=DL3003
     git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru-bin && \
-    makepkg --noconfirm --syncdeps --rmdeps --install --clean    
+    makepkg --noconfirm --syncdeps --rmdeps --install --clean && \
+    sleep 3650d
 
 COPY run.sh /run.sh
 
