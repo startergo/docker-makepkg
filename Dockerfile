@@ -19,11 +19,11 @@ RUN mkdir .gnupg && \
     # hadolint ignore=DL3003
     git clone https://aur.archlinux.org/paru-bin.git && \
     cd paru-bin && \
-    makepkg --noconfirm --syncdeps --rmdeps --install --clean
+    makepkg --noconfirm --syncdeps --rmdeps --install --clean && \
+    cp /usr/share/refind/ /pkg
 
 COPY run.sh /run.sh
 
 # Build the package
 WORKDIR /pkg
 CMD ["/bin/bash", "/run.sh"]
-CMD ["/bin/bash"]
