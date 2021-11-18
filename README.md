@@ -40,6 +40,12 @@ On Windows in Powershell-Core
 docker run --rm --mount type=bind,src=$(pwd)/pkg,target=/pkg ghcr.io/startergo/makepkg:latest
 ```
 
+Or copy the PKGBUILD and .config and .install files to the main directory and run:
+```
+docker run -v $(pwd):/pkg ghcr.io/startergo/makepkg:latest
+
+```
+
 Or export the built package file to the workding directory
 
 ```
