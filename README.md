@@ -46,6 +46,16 @@ Or export the built package file to the workding directory
 docker run -e EXPORT_PKG=1 -v $(pwd):/pkg ghcr.io/startergo/makepkg:latest
 ```
 
+Extract the package:
+```
+tar xf <package_name> 
+```
+
+Copy the log file:
+```
+docker logs <container_id>  >& usr/log.log
+```
+
 Or export the updated .SRCINFO for the package
 
 ```
