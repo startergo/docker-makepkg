@@ -43,13 +43,13 @@ docker run --rm --mount type=bind,src=$(pwd)/pkg,target=/pkg ghcr.io/startergo/m
 Or export the built package file to the workding directory
 
 ```
-docker run -e EXPORT_PKG=1 -v $PWD:/pkg ghcr.io/startergo/makepkg:latest
+docker run -e EXPORT_PKG=1 -v $(pwd):/pkg ghcr.io/startergo/makepkg:latest
 ```
 
 Or export the updated .SRCINFO for the package
 
 ```
-docker run -e EXPORT_SRC=1 -v $PWD:/pkg ghcr.io/startergo/makepkg:latest
+docker run -e EXPORT_SRC=1 -v $(pwd):/pkg ghcr.io/startergo/makepkg:latest
 ```
 
 If you are running Arch, add `-v /etc/pacman.d/mirrorlist:/etc/pacman.d/mirrorlist:ro`
