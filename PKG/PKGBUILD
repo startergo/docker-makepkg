@@ -37,7 +37,7 @@ provides=("refind=${pkgver}" "refind-efi=${pkgver}")
 
 install="${pkgname%-git}.install"
 
-source=('refind::git+https://git.code.sf.net/p/refind/code#branch=master'
+source=('refind::git+https://github.com/dakanji/RefindPlus.git#branch=master'
         'refind_linux.conf')
 
 sha512sums=('SKIP'
