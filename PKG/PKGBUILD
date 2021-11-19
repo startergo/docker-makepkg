@@ -32,7 +32,7 @@ optdepends=('sudo: privilege elevation'
 
 options=('!strip' '!buildflags' '!makeflags')
 
-conflicts=('refind' 'refind-efi')
+conflicts=("${_pkgname%}" "${pkgname%}")
 provides=("refind=${pkgver}" "refind-efi=${pkgver}")
 
 install="${pkgname%-git}.install"
