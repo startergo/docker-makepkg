@@ -144,6 +144,9 @@ _prepare_refind_sources() {
 		# Fix UDK Path in rEFInd Makefiles
 		sed "s|^export EDK2BASE=.*$|export EDK2BASE=${_UDK_DIR}|g" -i "${srcdir}/${_pkgname}_build/Makefile" || true
 		
+		# Disable build ID generation
+		sed 's|--gc-sections|--gc-sections --build-id=none|g' -i "${srcdir}/${_pkgname}_build/Make.common" || true
+		
 		# Fix btrfs build
 		sed 's|-Os -DEFIX64 -D__MAKEWITH_TIANO|-Os -DEFIX64 -D__MAKEWITH_TIANO -DLZO_CFG_FREESTANDING |g' -i "${_UDK_DIR}/RefindPkg/filesystems/btrfs.inf" || true
 		cd "${_UDK_DIR}/RefindPkg/filesystems"
@@ -153,10 +156,8 @@ _prepare_refind_sources() {
 		cd "${_UDK_DIR}/RefindPkg/filesystems/zstd/"
 		curl -O https://raw.githubusercontent.com/joevt/RefindPlus/GOPFix/filesystems/zstd/fse_decompress.c
 		curl -O https://raw.githubusercontent.com/joevt/RefindPlus/GOPFix/filesystems/zstd/huf_decompress.c
-		curl -O https://raw.githubusercontent.com/joevt/RefindPlus/GOPFix/filesystems/zstd/zstd_internal.h		
-
-		# Disable build ID generation
-		sed 's|--gc-sections|--gc-sections --build-id=none|g' -i "${srcdir}/${_pkgname}_build/Make.common" || true
+		curl -O https://raw.githubusercontent.com/joevt/RefindPlus/GOPFix/filesystems/zstd/zstd_internal.h
+		
 	fi
 
 }
