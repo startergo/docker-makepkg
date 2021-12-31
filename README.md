@@ -51,7 +51,10 @@ Or export the built package file to the workding directory
 ```
 docker run -e EXPORT_PKG=1 -v $(pwd):/pkg ghcr.io/startergo/makepkg:latest
 ```
-
+Install zstd with [MacPorts](https://ports.macports.org/port/zstd/):
+```
+sudo port install zstd
+```
 Extract the package:
 ```
 tar xf <package_name> 
