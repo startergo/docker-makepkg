@@ -8,6 +8,7 @@ cd /tmp/pkg
 
 # Do the actual building. Paru will fetch all dependencies for us (including
 # AUR dependencies) and then build the package.
+pacman -Syu --noconfirm
 paru -U --noconfirm
 
 # Store the built package(s). Ensure permissions match the original PKGBUILD.
